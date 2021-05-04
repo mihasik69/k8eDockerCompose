@@ -1,17 +1,20 @@
 version: '3.9'
+
+volumes:
+  my_volume:
+
 services:
   build_App42PaaS:
     build:
       context: ./App42PaaS
     volumes:
-      - my_volume:/app/App42PaaS-Java-MySQL-Sample/target
+      - my_volume:/app/App42PaaS-Java-MySQL-Sample/target:rw
 
   prod:
     image: tomcat:9-jdk11-slim
     ports:
       - "8090:8080"
     volumes:
-      - my_volume:/usr/local/tomcat/webapps
-
-volumes:
-  my_volume:
+      - my_volume:/usr/local/tomcat/webapps:rw
+    depends_on:
+      - build_App42PaaS
