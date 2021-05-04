@@ -4,7 +4,7 @@ volumes:
   my_volume:
 
 services:
-  build_App42PaaS:
+  build:
     build:
       context: ./App42PaaS
     volumes:
