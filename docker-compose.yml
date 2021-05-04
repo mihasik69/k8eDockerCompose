@@ -17,4 +17,4 @@ services:
     volumes:
       - my_volume:/usr/local/tomcat/webapps:rw
     depends_on:
-      - build_App42PaaS
+      - build
