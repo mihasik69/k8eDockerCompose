@@ -4,25 +4,14 @@ services:
     build:
       context: App42PaaS
     volumes:
-      - /my_volume:/app/App42PaaS-Java-MySQL-Sample/target
+      - my_volume:/app/App42PaaS-Java-MySQL-Sample/target
 
   prod:
     image: tomcat:9-jdk11-slim
     ports:
       - "8090:8080"
     volumes:
-      - /usr/local/tomcat/webapps:/my_volume
-
-  db:
-    image: mariadb:10.1
-    environment:
-      - app42.paas.db.username = "acp4pogynvaeidfj"
-      - app42.paas.db.port = "8514"
-      - app42.paas.db.password = "jc31d2qyy7h9jv5jn1u9uosjksxzaizw"
-      - app42.paas.db.ip = "192.168.2.175"
-      - app42.paas.db.name = "dd"
-    volumes:
-      - ./mysql:/var/lib/mysql
+      - my_volume:/usr/local/tomcat/webapps
 
 volumes:
   my_volume:
