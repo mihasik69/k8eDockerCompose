@@ -17,8 +17,8 @@ services:
       - "8090:8080"
     volumes:
       - app:/usr/local/tomcat/webapps:rw
-      - db:/var/lib/mysql
     depends_on:
+      - db
       - build
 
   db:
