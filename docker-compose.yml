@@ -2,7 +2,7 @@ version: '3.9'
 services:
   build_App42PaaS:
     build:
-      context: App42PaaS
+      context: ./App42PaaS
     volumes:
       - my_volume:/app/App42PaaS-Java-MySQL-Sample/target
 
