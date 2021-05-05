@@ -9,7 +9,7 @@ services:
     build:
       context: ./App42PaaS
     volumes:
-      - app:/app/App42PaaS-Java-MySQL-Sample/target:rw
+      - app:/app/App42PaaS/target:rw
 
   prod:
     image: tomcat:9-jdk11-slim
