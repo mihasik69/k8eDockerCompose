@@ -32,5 +32,5 @@ services:
       - app42.paas.db.username = "app42paas"
       - app42.paas.db.port = 5432
       - app42.paas.db.password = "app42paas"
-      - app42.paas.db.ip = ${hostIP}
+      - app42.paas.db.ip = 10.128.0.19
       - app42.paas.db.name = "app42paas-api"
