@@ -29,8 +29,8 @@ services:
     ports:
       - '5432:5432'
     environment:
-      - app42.paas.db.username="app42paas"
+      - app42.paas.db.username=app42paas
       - app42.paas.db.port=5432
-      - app42.paas.db.password="app42paas"
+      - app42.paas.db.password=app42paas
       - app42.paas.db.ip=84.252.135.127
-      - app42.paas.db.name="app42paas-api"
+      - app42.paas.db.name=app42paas-api
