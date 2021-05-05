@@ -6,4 +6,4 @@ WORKDIR /app
 RUN git clone https://github.com/mihasik69/App42PaaS.git
 RUN rm /app/App42PaaS/WebContent/Config.properties
 COPY . ./app/App42PaaS/WebContent
-RUN mvn package -f App42PaaS/pom.xml
+RUN mvn install -f App42PaaS/pom.xml
