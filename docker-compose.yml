@@ -28,7 +28,10 @@ services:
       - db:/var/lib/mysql
     ports:
       - '5432:5432'
-    command: /bin/bash -c "export hostIP=$(ip route get 1 | sed -n 's/^.*src \([0-9.]*\) .*$/\1/p')"
+    command:
+      - /bin/bash
+      - -c
+      - export hostIP=$(ip route get 1 | sed -n 's/^.*src \([0-9.]*\) .*$/\1/p')
     environment:
       - app42.paas.db.username = "app42paas"
       - app42.paas.db.port = 5432
