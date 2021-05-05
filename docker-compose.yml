@@ -28,13 +28,9 @@ services:
       - db:/var/lib/mysql
     ports:
       - '5432:5432'
-    command:
-      - /bin/bash
-      - -c
-      - export hostIP=$(hostname -I)
     environment:
       - app42.paas.db.username = "app42paas"
       - app42.paas.db.port = 5432
       - app42.paas.db.password = "app42paas"
-      - app42.paas.db.ip = ${hostIP}
+      - app42.paas.db.ip = ${hostname -I}
       - app42.paas.db.name = "app42paas-api"
