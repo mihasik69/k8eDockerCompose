@@ -22,7 +22,7 @@ services:
       - build
 
   db:
-    image: postgres:9.6.5-alpine
+    image: postgres:9.6.9-alpine
     volumes:
       - db:/var/lib/mysql
     ports:
