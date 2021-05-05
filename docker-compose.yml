@@ -22,7 +22,15 @@ services:
       - build
 
   db:
-    image: mariadb:10.1
+    image: postgres:9.6.5-alpine
     volumes:
-      - ./init.sql:/data/application/init.sql
+      - ./postgres-initdb.sh:/docker-entrypoint-initdb.d/init.sh
       - db:/var/lib/mysql
+    ports:
+      - '5432:5432'
+    environment:
+      - app42.paas.db.username = app42paas
+      - app42.paas.db.port = 5432
+      - app42.paas.db.password = app42paas
+      - app42.paas.db.ip = $(ip route get 1 | sed -n 's/^.*src \([0-9.]*\) .*$/\1/p')
+      - app42.paas.db.name = app42paas
