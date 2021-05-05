@@ -24,7 +24,6 @@ services:
   db:
     image: postgres:9.6.5-alpine
     volumes:
-      - ./postgres-initdb.sh:/docker-entrypoint-initdb.d/init.sh
       - db:/var/lib/mysql
     ports:
       - '5432:5432'
